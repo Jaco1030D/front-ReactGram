@@ -1,0 +1,6 @@
+export {default as Navbar} from './layout/Navbar'
+export {default as Footer} from './layout/Footer'
+export {default as Message} from './others/Message'
+export {default as PhotoItem} from './others/PhotoItem'
+export {default as PhotoComment} from './others/PhotoComment'
+export {default as MessageContainer} from './others/MessageContainer'
