@@ -1,5 +1,5 @@
-export const api = "http://back-react-gram.vercel.app/api"
-export const uploads = "http://back-react-gram.vercel.app/uploads"
+export const api = "https://back-react-gram.vercel.app/api"
+export const uploads = "https://back-react-gram.vercel.app/uploads"
 
 export const requestConfig = (method, data, token = null, image = null) =>{
     let config
