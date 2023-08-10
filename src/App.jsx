@@ -5,7 +5,7 @@ import { EditProfile, Home, Profile, Register, Photo, Search, Login } from './pa
 import { Footer, Navbar } from './components'
 
 function App() {
-  const auth = false
+  const auth = true
 
   return (
     <div className="App">
