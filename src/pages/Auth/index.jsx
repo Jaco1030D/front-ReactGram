@@ -35,7 +35,7 @@ const Login = () => {
         <input type="password" placeholder='Digite a senha...' value={password} onChange={(e) => setPassword(e.target.value)}/>
         {/* {loading && <input type="submit" value="Aguarde..." disabled />} */}
         <input type="submit" value="Entrar"  />
-        {error && <Message msg={error} type="error" />}
+        {/* {error && <Message msg={error} type="error" />} */}
       </form>
       <p>
        Não tem conta ainda? <Link to="/register">Clique aqui</Link>
