@@ -6,7 +6,7 @@ import { Message } from '../../components'
 import './Auth.css'
 
 const Login = () => {
-  console.log("ta indo");
+  // console.log("ta indo");
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
