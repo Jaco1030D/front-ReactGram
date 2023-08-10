@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom'
-import { EditProfile, Home, Login, Profile, Register, Photo, Search } from './pages'
+import { EditProfile, Home, Profile, Register, Photo, Search } from './pages'
+import { Login } from './pages/Auth/Login.jsx'
 import { Footer, Navbar } from './components'
 import { useAuth } from './hooks/useAuth'
 
