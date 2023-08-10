@@ -14,7 +14,7 @@ function App() {
       <div className="container">
       <Routes>
         <Route path='/register' element={!auth ? <Register/> : <Navigate to='/'/>} />
-        <Route path="/login" element={!auth ? <Login/> : <Navigate to='/'/>} />
+        <Route path="/login" element={<Login/>} />
       </Routes>
       </div>
       <Footer/>
