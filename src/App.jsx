@@ -12,10 +12,7 @@ function App() {
       <BrowserRouter>
       <Navbar/>
       <div className="container">
-      <Routes>
-        <Route path='/register' element={!auth ? <Register/> : <Navigate to='/'/>} />
-        <Route path="/login" element={<Login/>} />
-      </Routes>
+      <Login />
       </div>
       <Footer/>
       </BrowserRouter>
