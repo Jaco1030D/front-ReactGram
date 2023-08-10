@@ -8,18 +8,18 @@ function App() {
   const auth = true
 
   return (
-    <div className="App">
       <BrowserRouter>
-      <Navbar/>
-      <div className="container">
-      <Routes>
-        <Route path='/register' element={!auth ? <Register/> : <Navigate to='/'/>} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      </div>
-      <Footer/>
+        <div className="App">
+          <Navbar/>
+          <div className="container">
+          <Routes>
+            <Route path='/register' element={!auth ? <Register/> : <Navigate to='/'/>} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+          </div>
+          <Footer/>
+        </div>
       </BrowserRouter>
-    </div>
   )
 }
 
