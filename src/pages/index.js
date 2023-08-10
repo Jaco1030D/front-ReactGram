@@ -1,6 +1,6 @@
 export {default as Home} from './Home/Home'
 export {default as Register} from './Auth/Register'
-export {default as Login} from './Auth/Login'
+export {default as Login} from './Auth/Login.jsx'
 export {default as EditProfile} from './EditProfile/EditProfile'
 export {default as Profile} from './Profile/Profile'
 export {default as Photo} from './Photo/Photo'
