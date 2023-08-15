@@ -24,7 +24,6 @@ const Register = () => {
       password,
       confirmPassWord
     }
-    console.log(user)
 
     dispatch(register(user))
   }

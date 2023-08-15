@@ -138,9 +138,10 @@ const Profile = () => {
                         <span>Imagem:</span>
                         <input type="file" onChange={handleFile} />
                     </label>
-                    {!loadingPhoto && <input type="Submit" disabled={disa} value='Postar' />}
+                    {!loadingPhoto && <button>Postar</button>}
                     {loadingPhoto && (
-                        <input type="Submit" disabled value='Aguarde...' />
+                        <button disabled >Aguarde</button>
+                        // <input type="Submit" disabled value='Aguarde...' />
                     )}
                 </form>
             </div>
@@ -156,7 +157,9 @@ const Profile = () => {
                     onChange={(e) => setEditTitle(e.target.value)}
                     value={editTitle} />
                 
-                    <input type="Submit"  value='Atualizar' />
+                    {/* <input type="Submit" value='Atualizar' /> */}
+                    <button>Atualizar</button>
+                    <br />
                     <button className='cancel-btn' onClick={handleCancelEdit} >
                         cancelar edição
                     </button>

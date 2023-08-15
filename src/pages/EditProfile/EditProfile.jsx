@@ -25,7 +25,6 @@ const EditProfile = () => {
       setName(user.name)
       setEmail(user.email)
       setBio(user.bio)
-      console.log(user)
     }
   },[user])
   const handleFile = (e) =>{
