@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getPhotoById, like, comment } from '../../slices/PhotoSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { Message, MessageContainer, PhotoComment, PhotoItem } from '../../components'
+import { MessageContainer, PhotoComment, PhotoItem } from '../../components'
 import './Photo.css'
 import LikeContainer from '../../components/others/LikeContainer'
 import { useResetMessageComponent } from '../../hooks/useResetMessageComponent'
-import { uploads } from '../../utils/configure'
 const Photo = () => {
     const {id} = useParams()
     

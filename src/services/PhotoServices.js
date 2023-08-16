@@ -1,5 +1,4 @@
 import { boodyRequestPhotoService } from "../utils/bodyRequest";
-import { api, requestConfig } from "../utils/configure";
 const publishPhoto = async (data, token) => {
   return boodyRequestPhotoService("POST", data, token, true)
 }

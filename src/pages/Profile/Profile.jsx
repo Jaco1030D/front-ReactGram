@@ -1,7 +1,7 @@
 import './Profile.css'
 
 import { uploads } from '../../utils/configure'
-import  {Message, MessageContainer}  from '../../components'
+import  { MessageContainer}  from '../../components'
 import { Link, useParams } from 'react-router-dom'
 import { BsFillEyeFill, BsPencilFill, BsXLg } from 'react-icons/bs'
 import { useEffect, useRef, useState } from 'react'

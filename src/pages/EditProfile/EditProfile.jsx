@@ -65,7 +65,7 @@ const EditProfile = () => {
       <h2>Atualizar o seu perfil</h2>
       <p>Adicione uma imagem de perfil e conte mais sobre você</p>
       {(user.profileImage ||previewImg) && (<img className='profile-image'
-      src={previewImg ? URL.createObjectURL(previewImg) : `${uploads}/user/${user.profileImage}`}
+      src={previewImg ? URL.createObjectURL(previewImg) : `${uploads}/user/${user.profileImage}`} alt='img'
       />)}
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder='Digite seu nome...' value={name || ''} onChange={(e) => setName(e.target.value)} />
