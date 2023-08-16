@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom'
 import { EditProfile, Home, Profile, Register, Photo, Search, Login } from './pages'
