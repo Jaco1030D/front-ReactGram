@@ -4,7 +4,6 @@ import './EditProfile.css'
 import {useSelector, useDispatch} from 'react-redux'
 import { profile, resetMenssage, updateProfile } from '../../slices/UserSlices'
 import { Message } from '../../components'
-import { uploads } from '../../utils/configure'
 
 const EditProfile = () => {
   const [name, setName] = useState("")
@@ -30,7 +29,15 @@ const EditProfile = () => {
   const handleFile = (e) =>{
     const img = e.target.files[0]
     setPreviewImg(img)
-    setProfileImage(img)
+    const lerArquivo = new FileReader()
+
+    lerArquivo.onload = function (arquivo) {
+
+      setProfileImage(arquivo.target.result)
+
+    }
+
+    lerArquivo.readAsDataURL(img)
   }
   const handleSubmit = async (e) =>{
     e.preventDefault()
@@ -46,15 +53,8 @@ const EditProfile = () => {
     if (password) {
       userData.password = password
     }
-    const formData = new FormData()
 
-    const userFormData = Object.keys(userData).forEach((key) => 
-    formData.append(key, userData[key])
-    )
-
-    formData.append("user", userFormData)
-
-    await dispatch(updateProfile(formData))
+    await dispatch(updateProfile(userData))
 
     setTimeout(() => {
       dispatch(resetMenssage());
@@ -65,7 +65,7 @@ const EditProfile = () => {
       <h2>Atualizar o seu perfil</h2>
       <p>Adicione uma imagem de perfil e conte mais sobre você</p>
       {(user.profileImage ||previewImg) && (<img className='profile-image'
-      src={previewImg ? URL.createObjectURL(previewImg) : `${uploads}/user/${user.profileImage}`} alt='img'
+      src={previewImg ? URL.createObjectURL(previewImg) : user.profileImage} alt='img'
       />)}
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder='Digite seu nome...' value={name || ''} onChange={(e) => setName(e.target.value)} />

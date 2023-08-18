@@ -1,6 +1,5 @@
 import './Profile.css'
 
-import { uploads } from '../../utils/configure'
 import  { MessageContainer}  from '../../components'
 import { Link, useParams } from 'react-router-dom'
 import { BsFillEyeFill, BsPencilFill, BsXLg } from 'react-icons/bs'
@@ -33,7 +32,16 @@ const Profile = () => {
 
     const handleFile = (e) =>{
         const img = e.target.files[0]
-        setImage(img)
+        const lerArquivo = new FileReader()
+
+        lerArquivo.onload = function (arquivo) {
+
+            setImage(arquivo.target.result)
+
+        }
+
+        lerArquivo.readAsDataURL(img)
+
       }
     
     const newPhotoForm = useRef()
@@ -59,15 +67,17 @@ const Profile = () => {
             image
         }
 
-        const formData = new FormData()
+        console.log(photoData);
 
-        const photoFormData = Object.keys(photoData).forEach((key) => {
-            formData.append(key, photoData[key])
-        })
+        // const formData = new FormData()
 
-        formData.append("photo", photoFormData)
+        // const photoFormData = Object.keys(photoData).forEach((key) => {
+        //     formData.append(key, photoData[key])
+        // })
 
-        dispatch(publishPhoto(formData))
+        // formData.append("photo", photoFormData)
+
+        dispatch(publishPhoto(photoData))
 
         setTitle("")
         setImage("")
@@ -116,7 +126,7 @@ const Profile = () => {
     <div id='profile'>
         <div className="profile-header">
             {user.profileImage && (
-                <img src={`${uploads}/user/${user.profileImage}`} alt={user.name} />
+                <img src={user.profileImage} alt={user.name} />
             )}
             <div className="profile-description">
                 <h2>{user.name}</h2>
@@ -148,7 +158,7 @@ const Profile = () => {
             <div className="edit-photo hide" ref={editPhotoForm}>
                 <p>Editando</p>
                 {editImage && (
-                    <img src={`${uploads}/photos/${editImage}`} alt={editTitle} />
+                    <img src={editImage} alt={editTitle} />
                 )}
                 <form onSubmit={handleUpdate}>
                  
@@ -174,7 +184,7 @@ const Profile = () => {
             <div className="photos-container">
                 {photos && photos.map((photo) => (
                     <div className="photo" key={photo._id} >
-                        {photo.image && (<img src={`${uploads}/photos/${photo.image}`} alt={photo.title} />)}
+                        {photo.image && (<img src={photo.image} alt={photo.title} />)}
                         {id === userAuth._id ? (
                             <div className="actions">
                                 <Link to={`/photos/${photo._id}`} ><BsFillEyeFill/></Link>
